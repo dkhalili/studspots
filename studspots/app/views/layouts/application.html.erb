@@ -5,8 +5,26 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style>
+  	
+  </style>
 </head>
 <body>
+	<nav class="nav">
+		<div class="home">
+			<a href="/">Home</a>
+		</div>
+		<div class="profile">
+			<% if session[:user_id]%>
+      		<div> <a href="/users/<%= session[:user_id]%>">My Profile</a> </div>
+      		<div> <%= link_to "Logout", sessions_path, method: :delete %> </div>
+      <% end %>
+		</div>
+	</nav>
+
+<script type="text/javascript">
+
+</script>
 
 <%= yield %>
 
