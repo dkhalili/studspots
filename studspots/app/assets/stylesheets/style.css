@@ -21,3 +21,23 @@ html, body {
 	padding-top: 6px;
 	float:right;
 }
+.content{
+	width:100%;
+	display: inline;
+}
+
+.name {
+
+}
+.info {
+	padding-left: 9px;
+	float: left;
+}
+.sideButtons {
+	padding-right: 9px;
+	float: right;
+}
+.middle {
+	left:40%;
+	position: absolute;
+}
