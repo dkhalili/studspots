@@ -55,6 +55,18 @@ class SpotsController < ApplicationController
 		@lat = 40.7398530
 		@spot = Spot.find_by(id: spot_id)
 		@user = User.find_by(session[:id])
+	end
+
+	def update
+		@spot = Spot.find(params[:id])
+		@spot.update_attribute(:name, params["spot"]["name"])
+		@spot.update_attribute(:address, params["spot"]["address"])
+		@spot.update_attribute(:store_hours, params["spot"]["store_hours"])
+		@spot.update_attribute(:wifi, params["spot"]["wifi"])
+		@spot.update_attribute(:quiet, params["spot"]["quiet"])
+		@spot.update_attribute(:outlets, params["spot"]["outlets"])		
+		@spot.update_attribute(:outdoor_indoor, params["spot"]["outdoor_indoor"])
+
 		redirect_to spot_path
 	end
 

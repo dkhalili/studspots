@@ -1,7 +1,12 @@
-login
-
-<%= form_tag(sessions_path) do %>
-<%= text_field_tag :user_name, nil, placeholder: "Enter Username"%> <br>
-<%= password_field_tag :password, nil, placeholder: "Password"%>
-<%= button_tag "Login", class:"success radius"%>
-<% end %>
+<h1>Login</h1>
+<div class="loginContent">
+	<div class="loginData">
+		<%= form_tag(sessions_path) do %>
+		<h4>Username:</h4>
+		<%= text_field_tag :user_name, nil, placeholder: "Enter Username", :size => 30, :style => "height: 30px;",class:"userName"%><br>
+		<h4>Password:</h4>	
+		<%= password_field_tag :password, nil, placeholder: "Password", :size => 30, :style => "height: 30px;", class:"password" %><br>
+		<%= button_tag "Login", :style => "height: 40px; width:80px;", class:"submit"%>
+		<% end %>
+	</div>
+</div>
