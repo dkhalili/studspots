@@ -32,7 +32,8 @@
       });
 	var marker = new google.maps.Marker({position: {lat:<%=@lat%>, lng:<%=@long%>},
 		map: map,
-		title: 'Your Position'
+		title: 'Your Position',
+		icon: '.././my_location.png'
 		});
 	<% @spots.each do |spot| %>   
 	   

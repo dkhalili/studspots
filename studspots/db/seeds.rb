@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 long = -73.9895650.to_s
 lat = 40.7398530.to_s
-response = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+long+"&radius=500&types=cafe&key=AIzaSyAx9k85xNhwNitXhTZeV1xYLYvTp0sUzRA")
+response = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+long+"&radius=500&types=cafe&key=")
 results = response["results"]
 
 results.each do |result|
