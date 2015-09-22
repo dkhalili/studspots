@@ -1,0 +1,21 @@
+sign up
+
+   <div class="signUp content">
+      <%= form_for @user, html: { multipart: true } do |f| %>
+            
+            Enter Username:
+            <%= f.text_field :user_name, placeholder: 'Username' %><br>
+            Enter Name:
+            <%= f.text_field :name, placeholder: 'Name' %><br>
+            Enter Age:
+            <%= f.text_field :age, placeholder: 'Age' %><br>
+            Enter Password
+            <%= f.password_field :password, placeholder: 'Password' %></br>
+
+            Confirm Password
+            <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %><br>
+
+            <%= f.button "create", class:"radius success button" %>
+
+        <% end %>
+    </div>

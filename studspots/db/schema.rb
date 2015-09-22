@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916195513) do
+ActiveRecord::Schema.define(version: 20150922083759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 20150916195513) do
     t.string  "outdoor_indoor"
     t.integer "likes"
     t.integer "dislikes"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string  "user_name"
+    t.string  "name"
+    t.integer "age"
+    t.string  "password_digest"
+    t.integer "favorites",       default: [], array: true
   end
 
 end
