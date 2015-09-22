@@ -1,19 +1,19 @@
-sign up
+<h1>Sign Up</h1>
 
-   <div class="signUp content">
+   <div class="signUp content signUpContent">
         <%= form_for @user, html: { multipart: true } do |f| %>
             
-            Enter Username:
-            <%= f.text_field :user_name, placeholder: 'Username' %><br>
-            Enter Name:
-            <%= f.text_field :name, placeholder: 'Name' %><br>
+            <p>Enter Username:</p>
+            <%= f.text_field :user_name, placeholder: 'Username', :size => 30, :style => "height: 20px;"%><br>
+            <p>Enter Name:</p>
+            <%= f.text_field :name, placeholder: 'Name', :size => 30, :style => "height: 20px;" %><br>
             Enter Age:
-            <%= f.text_field :age, placeholder: 'Age' %><br>
+            <%= f.text_field :age, placeholder: 'Age', :size => 30, :style => "height: 20px;" %><br>
             Enter Password
-            <%= f.password_field :password, placeholder: 'Password' %></br>
+            <%= f.password_field :password, placeholder: 'Password', :size => 30, :style => "height: 20px;" %></br>
 
             Confirm Password
-            <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %><br>
+            <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation', :size => 30, :style => "height: 20px;" %><br>
 
             <%= f.button "create", class:"radius success button" %>
 

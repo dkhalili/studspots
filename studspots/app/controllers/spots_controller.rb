@@ -2,7 +2,7 @@ class SpotsController < ApplicationController
 	def update
 		long = -73.9895650.to_s
 		lat = 40.7398530.to_s
-		response = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+long+"&radius=500&types=cafe&key=AIzaSyAx9k85xNhwNitXhTZeV1xYLYvTp0sUzRA")
+		response = HTTParty.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+long+"&radius=500&types=cafe&key=")
 		@results = response["results"]
 		spots = Spot.all
 		there = false
@@ -55,8 +55,8 @@ class SpotsController < ApplicationController
 		@lat = 40.7398530
 		@spot = Spot.find_by(id: spot_id)
 		@user = User.find_by(session[:id])
-		redirect_to spot_path
 	end
+
 
 
 	private
