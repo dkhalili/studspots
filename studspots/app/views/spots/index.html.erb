@@ -2,24 +2,25 @@
 <div id="map"></div>
 
 <input type="button" value="Update">
-<h1>Welcome</h1>
+<div class="spots content">
 
 <%@spots.each do |spot| %>
-<%=spot['name']%><br>
-<%=spot["address"] %>
-<%=spot["store_hours"] %>
-<%=spot["longitude"] %>
-<%=spot["latitude"] %>
-<%=spot["wifi"] %>
-<%=spot["quiet"] %>
-<%=spot["outlets"] %>
-<%=spot["outdoor_indoor"] %>
-<%=spot["likes"] %>
-<%=spot["dislikes"] %><br><br>
-
+	<div class="spots">
+		<%=spot['name']%><br>
+		<%=spot["address"] %>
+		<%=spot["store_hours"] %>
+		<%=spot["longitude"] %>
+		<%=spot["latitude"] %>
+		<%=spot["wifi"] %>
+		<%=spot["quiet"] %>
+		<%=spot["outlets"] %>
+		<%=spot["outdoor_indoor"] %>
+		<%=spot["likes"] %>
+		<%=spot["dislikes"] %><br><br>
+	</div>
 <%end%>
 
-
+</div>
 <script type="text/javascript">
 
     var map;

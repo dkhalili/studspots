@@ -49,6 +49,15 @@ class SpotsController < ApplicationController
 		@user = User.find_by(session[:id])
 	end
 
+	def edit
+		spot_id = params[:id]
+		@long = -73.9895650
+		@lat = 40.7398530
+		@spot = Spot.find_by(id: spot_id)
+		@user = User.find_by(session[:id])
+		redirect_to spot_path
+	end
+
 
 	private
 	def spot_params

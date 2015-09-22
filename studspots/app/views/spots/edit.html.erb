@@ -4,38 +4,32 @@
 <div class="content">
 
 	<div class="info">
-		<%= @spot["store_hours"] %><br>
-		<%= @spot["wifi"] %><br>
-		<%= @spot["quiet"] %><br>
-		<%= @spot["outlets"] %><br>
-		<%= @spot["outdoor_indoor"] %><br>
-	</div>
+		<%= form_for @spot do |f| %>
+			Name: 
+			<%= f.text_field :name, placeholder: "Name" %><br>
+			Address: 
+			<%= f.text_field :address, placeholder: "Address" %><br>
+			Store hours: 
+			<%= f.text_field :store_hours, placeholder: "Store Hours" %><br>
+			Wifi: 
+			<%= f.text_field :wifi, placeholder: "Wifi" %><br>
+			Quiet: 
+			<%= f.text_field :quiet, placeholder: "Quiet" %><br>
+			Outlets: 
+			<%= f.text_field :outlets, placeholder: "Outlets" %><br>
+			Outdoor or Indoor:
+			<%= f.text_field :outdoor_indoor,placeholder: "Outdoor or Indoor" %><br>
 
+			<%= f.submit %>
 
-	<div class = "sideButtons">
-		<%= form_for @user, html: {multipart: true} do |f| %>
-		    	<%= f.hidden_field :favorites, value: @spot["id"] %> 
-		    	 <%=f.submit 'Add to Favorites' %>
 		<% end %>
-		<a href="/spots/<%=@spot['id']%>/edit"><input type="button" value="Edit Spot"></a>
 	</div>
+
+
 
 	<div class="middle">
 		<h1 class="name"><%= @spot["name"] %></h1>
 		<%= @spot["address"] %><br><br>
-		<div class="like">
-		<%= form_for @spot, html: {multipart: true} do |f| %>
-		    	<%= f.hidden_field :likes, value: @spot["likes"] %> 
-		    	 <%=f.submit 'Like' %>
-		<% end %> 
-		<div>
-
-		<div class="dislike">
-		<%= form_for @spot, html: {multipart: true} do |f| %>
-		    	<%= f.hidden_field :dislikes, value: @spot["dislikes"] %> 
-		    	 <%=f.submit 'Dislike' %>
-		<% end %>
-		</div> 
 	</div>
 
 
