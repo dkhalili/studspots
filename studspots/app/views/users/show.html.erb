@@ -32,9 +32,17 @@
       });
 	var marker = new google.maps.Marker({position: {lat:<%=@lat%>, lng:<%=@long%>},
 		map: map,
-		title: 'Your Position',
+		title: 'Your Position'
 		});
 
+	<% @fav.each do |f|%>
+		var marker = new google.maps.Marker({position: {lat:<%=f['latitude']%>, lng:<%=f['longitude']%>}, map: map,title: '<%=f['name']%>'
+		});
+		google.maps.event.addListener(marker, 'click', function() {
+	    	window.location.href = "/spots/<%=f['id']%>";
+	    });
+
+	<%end%>
     }
 
 </script>
