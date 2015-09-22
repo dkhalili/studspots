@@ -1,0 +1,21 @@
+<h1>New</h1>
+
+<%= form_for @spot do |f| %>
+	Name: 
+	<%= f.text_field :name, placeholder: "Name" %><br>
+	Address: 
+	<%= f.text_field :address, placeholder: "Address" %><br>
+	Store hours: 
+	<%= f.text_field :store_hours, placeholder: "Store Hours" %><br>
+	Wifi: 
+	<%= f.text_field :wifi, placeholder: "Wifi" %><br>
+	Quiet: 
+	<%= f.text_field :quiet, placeholder: "Quiet" %><br>
+	Outlets: 
+	<%= f.text_field :outlets, placeholder: "Outlets" %><br>
+	Outdoor or Indoor:
+	<%= f.text_field :outdoor_indoor,placeholder: "Outdoor or Indoor" %><br>
+
+	<%= f.submit %>
+
+<% end %>
