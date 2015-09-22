@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-before_action :authenticate, except: [:new, :create]
 
 	def index
 	end
@@ -19,6 +18,13 @@ before_action :authenticate, except: [:new, :create]
 		 flash[:error] = "There was error creating your profile"
 		 render template: "welcome/index"
 		end
+	end
+
+	def show
+		@user = User.find(session[:user_id])
+		@long = -73.9895650
+		@lat = 40.7398530
+		@favorites = @user["favorites"]
 	end
 
 
